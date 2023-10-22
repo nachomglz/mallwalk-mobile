@@ -5,9 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 const Stack = createNativeStackNavigator()
 
 export const ChatStack = () => {
-    return <Stack.Navigator screenOptions={{
-      headerShown: false
-    }}>
-      <Stack.Screen name="ChatScreen" component={Chat} />
+    return <Stack.Navigator >
+      <Stack.Screen name="Chat" component={Chat} />
     </Stack.Navigator>
 }

@@ -5,26 +5,34 @@ import {Text, View} from 'react-native'
 import { ReceiptStack } from "./ReceiptStack";
 import { ChatStack } from "./ChatStack";
 import { WalkStack } from "./WalkStack";
+import { FindMeStack } from "./FindMeStack";
 
 const Tab = createBottomTabNavigator()
 
 const MainStack = () => {
-    return <Tab.Navigator screenOptions={{
-      headerShown: false
-    }} >
-        <Tab.Screen
-          name="ReceiptStack"
-          component={ReceiptStack}
-        />
-        <Tab.Screen
-          name="WalkStack"
-          component={WalkStack}
-        />
-        <Tab.Screen
-          name="ChatStack"
-          component={ChatStack}
-        />
-    </Tab.Navigator>
+    return (
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+        initialRouteName="ReceiptStack"
+      >
+          <Tab.Screen
+            name="ReceiptStack"
+            options={{
+              title: "Facturas"
+            }}
+            component={ReceiptStack}
+          />
+          <Tab.Screen
+            options={{
+              title: "Find me"
+            }}
+            name="FindMeGame"
+            component={FindMeStack}
+          />
+      </Tab.Navigator>)
+    
 }
 
 export default MainStack
